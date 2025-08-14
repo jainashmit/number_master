@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class NumberTile extends StatelessWidget {
   final int number;
-  final bool isFaded;
   final bool isSelected;
   final bool isHinted;
   final VoidCallback onTap;
@@ -11,7 +10,6 @@ class NumberTile extends StatelessWidget {
   const NumberTile({
     super.key,
     required this.number,
-    required this.isFaded,
     required this.isSelected,
     required this.isHinted,
     required this.onTap,
@@ -25,13 +23,10 @@ class NumberTile extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(color: Colors.purple[200]!),
-          color: isSelected || isHinted ? Colors.white.withOpacity(0.3) : null,
+          color: isSelected || isHinted ? const Color.fromARGB(76, 255, 255, 255): null,
         ),
         child: Center(
-          child: Opacity(
-            opacity: isFaded ? 0.3 : 1.0,
-            child: Text('$number', style: TextStyle(fontSize: 30, color: color)),
-          ),
+          child: Text('$number', style: TextStyle(fontSize: 30, color: color)),
         ),
       ),
     );

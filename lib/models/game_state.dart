@@ -48,5 +48,6 @@ class GameState extends Equatable {
   }
 
   @override
-  List<Object?> get props => [grid, faded, selected, hinted, addsLeft, hintsLeft, noMorePairs];
+  List<Object?> get props =>
+      [grid, faded, selected, hinted, addsLeft, hintsLeft, noMorePairs];
 }

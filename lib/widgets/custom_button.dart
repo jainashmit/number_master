@@ -17,10 +17,11 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return badges.Badge(
-      badgeContent: Text(badge.toString(), style: const TextStyle(color: Colors.white)),
-      child: IconButton(
-        icon: Icon(icon, color: Colors.purple, size: 50),
-        onPressed: onPressed,
+      badgeContent:
+          Text(badge.toString(), style: const TextStyle(color: Colors.white)),
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Icon(icon, color: Colors.purple, size: 50),
       ),
     );
   }
